@@ -22,9 +22,9 @@ export default {
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts',
-    '!<rootDir>/src/presentation/protocols/**',
+    '!<rootDir>/src/**/protocols/**',
     '!<rootDir>/src/domain/**/**',
-    '!<rootDir>/src/presentation/**/**/**-protocols.ts'
+    '!<rootDir>/src/**/**/**/**-protocols.ts'
   ],
 
   // The directory where Jest should output its coverage files
@@ -107,7 +107,7 @@ export default {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  // preset: undefined,
+  preset: '@shelf/jest-mongodb',
 
   // Run tests from one or more projects
   // projects: undefined,
