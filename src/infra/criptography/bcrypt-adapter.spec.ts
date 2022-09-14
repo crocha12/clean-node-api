@@ -29,7 +29,7 @@ describe('Bcrypt Adapter', () => {
     expect(hash).toBe('hash')
   })
 
-  test('should throw if bcrypt throws', async () => {
+  test('should throw if hash throws', async () => {
     const sut = makeSut()
     jest.spyOn(bcrypt, 'hash')
       .mockRejectedValueOnce(new Error() as never)
@@ -56,5 +56,13 @@ describe('Bcrypt Adapter', () => {
       .mockImplementation(async () => await Promise.resolve(false))
     const isValid = await sut.compare('any_value', 'any_hash')
     expect(isValid).toBe(false)
+  })
+
+  test('should throw if compare throws', async () => {
+    const sut = makeSut()
+    jest.spyOn(bcrypt, 'compare')
+      .mockRejectedValueOnce(new Error() as never)
+    const promise = sut.compare('any_value', 'any_hash')
+    await expect(promise).rejects.toThrow()
   })
 })
