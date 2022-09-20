@@ -1,9 +1,12 @@
 {
     "cSpell.words": [
         "criptography",
+        "decrypter",
+        "Decrypter",
         "encrypter",
         "hasher",
         "middlewares",
+        "Usecase",
         "usecases"
     ]
 }
