@@ -5,7 +5,8 @@ export default {
     '!<rootDir>/src/main/**',
     '!<rootDir>/src/**/protocols/**',
     '!<rootDir>/src/**/**-protocols.ts',
-    '!<rootDir>/src/domain/**/**'
+    '!<rootDir>/src/domain/**/**',
+    '!**/test/**'
   ],
   coverageDirectory: 'coverage',
   transform: {
