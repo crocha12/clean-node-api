@@ -1,6 +1,6 @@
-import { loginParamsSchema } from './schemas/login-params-schema'
-import { loginPath } from './paths/login-path'
-import { accountSchema } from './schemas/account-schema'
+import { loginPath } from './paths'
+import { accountSchema, errorSchema, loginParamsSchema } from './schemas'
+import { badRequest, notFound, serverError, unauthorized } from './components'
 
 export default {
   openapi: '3.0.0',
@@ -8,6 +8,10 @@ export default {
     title: 'Clean Node API',
     description: 'API do curso de Node.js, Typescript, TDD, Clean Architecture e SOLID',
     version: '1.0.0'
+  },
+  license: {
+    name: 'ISC',
+    url: 'https://opensource.org/licenses/ISC'
   },
   servers: [{
     url: '/api'
@@ -20,6 +24,13 @@ export default {
   },
   schemas: {
     account: accountSchema,
-    login: loginParamsSchema
+    login: loginParamsSchema,
+    error: errorSchema
+  },
+  components: {
+    badRequest,
+    serverError,
+    unauthorized,
+    notFound
   }
 }
