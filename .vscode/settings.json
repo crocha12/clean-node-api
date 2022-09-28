@@ -1,11 +1,14 @@
 {
     "cSpell.words": [
+        "ciphertext",
         "criptography",
         "decrypter",
         "Decrypter",
         "encrypter",
         "hasher",
         "middlewares",
+        "mockdate",
+        "plaitext",
         "Usecase",
         "usecases"
     ]
